@@ -388,7 +388,7 @@ body{
     animation-name: moveSecond;
 }
 
-@keyframes moveMinute {
+@keyframes moveHour {
     from {
         transform: rotate(calc(180deg + var(--hour-deg-before)));
     }
