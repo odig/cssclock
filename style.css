@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css?family=Butterfly+Kids|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+body{
+    font-family: 'Anton', sans-serif;
+
+    --hour: 0;
+    --minute: 0;
+    --second: 0;
+    --hour-before: 0;
+    --minute-before: 0;
+    --second-before: 0;
+    --hour-deg-before: calc(calc(var(--hour-before) + calc(var(--minute-before) / 60)) * 30deg);
+    --hour-deg: calc(calc(var(--hour) + calc(var(--minute) / 60)) * 30deg);
+    --minute-deg-before: calc(var(--minute-before) * 6deg);
+    --minute-deg: calc(var(--minute) * 6deg);
+    --second-deg-before: calc(var(--second-before) * 6deg);
+    --second-deg: calc(var(--second) * 6deg);
+    --dot-size: 10px;
+}
+
+#clock {
+    background-color: #d4d4d4;
+    border-radius: 50%;
+    position: absolute;
+    margin:auto;
+    width: 100vmin;
+    height: 100vmin;
+}
+
+.marker {
+    background-color: black;
+    position: absolute;
+    top:  50vmin;
+    left: calc(50vmin - 2.5px);
+    width: 5px;
+    height: 3vmin;
+    transform-origin: 50% 0vh;
+}
+
+.marker-big {
+    background-color: black;
+    position: absolute;
+    top:  50vmin;
+    left: calc(50vmin - 5px);
+    width: 10px;
+    height: 5vmin;
+    transform-origin: 50% 0vh;
+}
+
+#marker-1 {
+    transform: rotate(calc(180deg + 30deg)) translate(0, 47vmin);
+}
+
+#marker-2 {
+    transform: rotate(calc(180deg + 60deg)) translate(0, 47vmin);
+}
+
+#marker-3 {
+    transform: rotate(calc(180deg + 90deg)) translate(0, 45vmin);
+}
+
+#marker-4 {
+    transform: rotate(calc(180deg + 120deg)) translate(0, 47vmin);
+}
+
+#marker-5 {
+    transform: rotate(calc(180deg + 150deg)) translate(0, 47vmin);
+}
+
+#marker-6 {
+    transform: rotate(calc(180deg + 180deg)) translate(0, 45vmin);
+}
+
+#marker-7 {
+    transform: rotate(calc(180deg + 210deg)) translate(0, 47vmin);
+}
+
+#marker-8 {
+    transform: rotate(calc(180deg + 240deg)) translate(0, 47vmin);
+}
+
+#marker-9 {
+    transform: rotate(calc(180deg + 270deg)) translate(0, 45vmin);
+}
+
+#marker-10 {
+    transform: rotate(calc(180deg + 300deg)) translate(0, 47vmin);
+}
+
+#marker-11 {
+    transform: rotate(calc(180deg + 330deg)) translate(0, 47vmin);
+}
+
+#marker-12 {
+    transform: rotate(calc(180deg + 0deg)) translate(0, 45vmin);
+}
+
+.marker-min {
+    background-color: black;
+    position: absolute;
+    top:  50vmin;
+    left: calc(50vmin - 2.5px);
+    width: 5px;
+    height: 2vmin;
+    transform-origin: 50% 0vh;
+}
+
+#marker-min-1 {
+    transform: rotate(calc(180deg + calc(1 *6deg))) translate(0, 48vmin);
+}
+#marker-min-2 {
+    transform: rotate(calc(180deg + calc(2 *6deg))) translate(0, 48vmin);
+}
+#marker-min-3 {
+    transform: rotate(calc(180deg + calc(3 *6deg))) translate(0, 48vmin);
+}
+#marker-min-4 {
+    transform: rotate(calc(180deg + calc(4 *6deg))) translate(0, 48vmin);
+}
+#marker-min-6 {
+    transform: rotate(calc(180deg + calc(6 *6deg))) translate(0, 48vmin);
+}
+#marker-min-7 {
+    transform: rotate(calc(180deg + calc(7 *6deg))) translate(0, 48vmin);
+}
+#marker-min-8 {
+    transform: rotate(calc(180deg + calc(8 *6deg))) translate(0, 48vmin);
+}
+#marker-min-9 {
+    transform: rotate(calc(180deg + calc(9 *6deg))) translate(0, 48vmin);
+}
+#marker-min-11 {
+    transform: rotate(calc(180deg + calc(11 *6deg))) translate(0, 48vmin);
+}
+#marker-min-12 {
+    transform: rotate(calc(180deg + calc(12 *6deg))) translate(0, 48vmin);
+}
+#marker-min-13 {
+    transform: rotate(calc(180deg + calc(13 *6deg))) translate(0, 48vmin);
+}
+#marker-min-14 {
+    transform: rotate(calc(180deg + calc(14 *6deg))) translate(0, 48vmin);
+}
+#marker-min-16 {
+    transform: rotate(calc(180deg + calc(16 *6deg))) translate(0, 48vmin);
+}
+#marker-min-17 {
+    transform: rotate(calc(180deg + calc(17 *6deg))) translate(0, 48vmin);
+}
+#marker-min-18 {
+    transform: rotate(calc(180deg + calc(18 *6deg))) translate(0, 48vmin);
+}
+#marker-min-19 {
+    transform: rotate(calc(180deg + calc(19 *6deg))) translate(0, 48vmin);
+}
+#marker-min-21 {
+    transform: rotate(calc(180deg + calc(21 *6deg))) translate(0, 48vmin);
+}
+#marker-min-22 {
+    transform: rotate(calc(180deg + calc(22 *6deg))) translate(0, 48vmin);
+}
+#marker-min-23 {
+    transform: rotate(calc(180deg + calc(23 *6deg))) translate(0, 48vmin);
+}
+#marker-min-24 {
+    transform: rotate(calc(180deg + calc(24 *6deg))) translate(0, 48vmin);
+}
+#marker-min-26 {
+    transform: rotate(calc(180deg + calc(26 *6deg))) translate(0, 48vmin);
+}
+#marker-min-27 {
+    transform: rotate(calc(180deg + calc(27 *6deg))) translate(0, 48vmin);
+}
+#marker-min-28 {
+    transform: rotate(calc(180deg + calc(28 *6deg))) translate(0, 48vmin);
+}
+#marker-min-29 {
+    transform: rotate(calc(180deg + calc(29 *6deg))) translate(0, 48vmin);
+}
+#marker-min-31 {
+    transform: rotate(calc(180deg + calc(31 *6deg))) translate(0, 48vmin);
+}
+#marker-min-32 {
+    transform: rotate(calc(180deg + calc(32 *6deg))) translate(0, 48vmin);
+}
+#marker-min-33 {
+    transform: rotate(calc(180deg + calc(33 *6deg))) translate(0, 48vmin);
+}
+#marker-min-34 {
+    transform: rotate(calc(180deg + calc(34 *6deg))) translate(0, 48vmin);
+}
+#marker-min-36 {
+    transform: rotate(calc(180deg + calc(36 *6deg))) translate(0, 48vmin);
+}
+#marker-min-37 {
+    transform: rotate(calc(180deg + calc(37 *6deg))) translate(0, 48vmin);
+}
+#marker-min-38 {
+    transform: rotate(calc(180deg + calc(38 *6deg))) translate(0, 48vmin);
+}
+#marker-min-39 {
+    transform: rotate(calc(180deg + calc(39 *6deg))) translate(0, 48vmin);
+}
+#marker-min-41 {
+    transform: rotate(calc(180deg + calc(41 *6deg))) translate(0, 48vmin);
+}
+#marker-min-42 {
+    transform: rotate(calc(180deg + calc(42 *6deg))) translate(0, 48vmin);
+}
+#marker-min-43 {
+    transform: rotate(calc(180deg + calc(43 *6deg))) translate(0, 48vmin);
+}
+#marker-min-44 {
+    transform: rotate(calc(180deg + calc(44 *6deg))) translate(0, 48vmin);
+}
+#marker-min-46 {
+    transform: rotate(calc(180deg + calc(46 *6deg))) translate(0, 48vmin);
+}
+#marker-min-47 {
+    transform: rotate(calc(180deg + calc(47 *6deg))) translate(0, 48vmin);
+}
+#marker-min-48 {
+    transform: rotate(calc(180deg + calc(48 *6deg))) translate(0, 48vmin);
+}
+#marker-min-49 {
+    transform: rotate(calc(180deg + calc(49 *6deg))) translate(0, 48vmin);
+}
+#marker-min-51 {
+    transform: rotate(calc(180deg + calc(51 *6deg))) translate(0, 48vmin);
+}
+#marker-min-52 {
+    transform: rotate(calc(180deg + calc(52 *6deg))) translate(0, 48vmin);
+}
+#marker-min-53 {
+    transform: rotate(calc(180deg + calc(53 *6deg))) translate(0, 48vmin);
+}
+#marker-min-54 {
+    transform: rotate(calc(180deg + calc(54 *6deg))) translate(0, 48vmin);
+}
+#marker-min-56 {
+    transform: rotate(calc(180deg + calc(56 *6deg))) translate(0, 48vmin);
+}
+#marker-min-57 {
+    transform: rotate(calc(180deg + calc(57 *6deg))) translate(0, 48vmin);
+}
+#marker-min-58 {
+    transform: rotate(calc(180deg + calc(58 *6deg))) translate(0, 48vmin);
+}
+#marker-min-59 {
+    transform: rotate(calc(180deg + calc(59 *6deg))) translate(0, 48vmin);
+}
+
+.number {
+    font-size: 170%;
+    position: absolute;
+    top: calc(50vmin - 1rem);
+    left: calc(50vmin - .5rem);
+    transform-origin: 50% 50%;
+    --number-translate-y: 43vmin;
+}
+
+.number-big {
+    font-size: 200%;
+    position: absolute;
+    top: calc(50vmin - 1.5rem);
+    left: calc(50vmin - .5rem);
+    width: 1rem;
+    height: 1rem;
+    transform-origin: 50% 50%;
+    --number-big-translate-y: 40vmin;
+}
+
+#number-1 {
+    transform: rotate(calc(180deg + 30deg)) translate(0, var(--number-translate-y)) rotate(calc(180deg - 30deg));
+}
+
+#number-2 {
+    transform: rotate(calc(180deg + 60deg)) translate(0, var(--number-translate-y)) rotate(calc(180deg - 60deg));
+}
+
+#number-3 {
+    transform: rotate(calc(180deg + 90deg)) translate(0, var(--number-big-translate-y)) rotate(calc(180deg - 90deg));
+}
+
+#number-4 {
+    transform: rotate(calc(180deg + 120deg)) translate(0, var(--number-translate-y)) rotate(calc(180deg - 120deg));
+}
+
+#number-5 {
+    transform: rotate(calc(180deg + 150deg)) translate(0, var(--number-translate-y)) rotate(calc(180deg - 150deg));
+}
+
+#number-6 {
+    transform: rotate(calc(180deg + 180deg)) translate(0, var(--number-big-translate-y)) rotate(calc(180deg - 180deg));
+}
+
+#number-7 {
+    transform: rotate(calc(180deg + 210deg)) translate(0, var(--number-translate-y)) rotate(calc(180deg - 210deg));
+}
+
+#number-8 {
+    transform: rotate(calc(180deg + 240deg)) translate(0, var(--number-translate-y)) rotate(calc(180deg - 240deg));
+}
+
+#number-9 {
+    transform: rotate(calc(180deg + 270deg)) translate(0, var(--number-big-translate-y)) rotate(calc(180deg - 270deg));
+}
+
+#number-10 {
+    transform: rotate(calc(180deg + 300deg)) translate(0, var(--number-translate-y)) rotate(calc(180deg - 300deg));
+}
+
+#number-11 {
+    transform: rotate(calc(180deg + 330deg)) translate(0, var(--number-translate-y)) rotate(calc(180deg - 330deg));
+}
+
+#number-12 {
+    left: calc(50vmin - .8rem);
+    transform: rotate(calc(180deg + 360deg)) translate(0, var(--number-big-translate-y)) rotate(calc(180deg - 360deg));
+}
+
+
+#dot {
+    background-color: #c3c3c3;
+    border-radius: 50%;
+    position: absolute;
+    top:  calc(50vmin - calc(var(--dot-size) / 2));
+    left: calc(50vmin - calc(var(--dot-size) / 2));
+    width: var(--dot-size);
+    height: var(--dot-size);
+    z-index: 4;
+}
+
+#hour {
+    background-color: black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    top:  50vmin;
+    left: calc(50vmin - 6px);
+    width: 12px;
+    height: 25vmin;
+    margin-top: -1.5vh;
+    transform-origin: calc(50%) 1.5vh;
+    transform: rotate(calc(180deg + var(--hour-deg)));
+    z-index: 1;
+    animation-duration: 1s;
+    animation-name: moveHour;    
+}
+
+#minute {
+    background-color: black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    top: 50vmin;
+    left: calc(50vmin - 5px);
+    width: 10px;
+    height: 40vmin;
+    margin-top: -2vh;
+    transform-origin: 50% 2vh;
+    transform: rotate(calc(180deg + var(--minute-deg)));
+    z-index: 2;
+    animation-duration: 1s;
+    animation-name: moveMinute;    
+}
+
+#second {
+    background-color: red;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    top: 50vmin;
+    left: calc(50vmin - 2.5px);
+    width: 5px;
+    height: 45vmin;
+    margin-top: -3vh;
+    transform-origin: 50% 3vh;
+    transform: rotate(calc(180deg + var(--second-deg)));
+    z-index: 3;
+    animation-duration: .8s;
+    animation-name: moveSecond;
+}
+
+@keyframes moveMinute {
+    from {
+        transform: rotate(calc(180deg + var(--hour-deg-before)));
+    }
+  
+    to {
+        transform: rotate(calc(180deg + var(--hour-deg)));
+    }
+  }
+
+@keyframes moveMinute {
+    from {
+        transform: rotate(calc(180deg + var(--minute-deg-before)));
+    }
+  
+    to {
+        transform: rotate(calc(180deg + var(--minute-deg)));
+    }
+  }
+
+@keyframes moveSecond {
+    from {
+        transform: rotate(calc(180deg + var(--second-deg-before)));
+    }
+  
+    to {
+        transform: rotate(calc(180deg + var(--second-deg)));
+    }
+  }
