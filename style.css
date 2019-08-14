@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Butterfly+Kids|Roboto');
+
 @import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
 
 * {
@@ -8,6 +8,9 @@
 
 body {
     font-family: 'Anton', sans-serif;
+
+    /* set size in relation to viewport */
+    --margin: 2vmin;
 
     --hour: 0;
     --minute: 0;
@@ -23,15 +26,29 @@ body {
     --minute-deg-before: calc(var(--minute-before) * 6deg);
     --second-deg-before: calc(var(--second-before) * 6deg);
 
+    --number-translate-y: calc(44vmin - var(--margin));
+    --number-quarter-translate-y: calc(41vmin - var(--margin));
+
     --dot-size: 10px;
 }
 
 .clock {
+    position: relative;
+    width: 100vmin;
+    height: 100vmin;
+    /* center css trick */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dial {
     background-color: #d4d4d4;
     border-radius: 50%;
     position: absolute;
-    width: 100vmin;
-    height: 100vmin;
+    top:  var(--margin);
+    left: var(--margin);
+    width: calc(100vmin - var(--margin) * 2);
+    height: calc(100vmin - var(--margin) * 2)
 }
 
 .marker {
@@ -55,54 +72,54 @@ body {
 }
 
 .marker-hour-1 {
-    transform: rotate(calc(180deg + 30deg)) translate(0, 47vmin);
+    transform: rotate(calc(180deg + 30deg)) translate(0, calc(47vmin - var(--margin)));
 }
 
 .marker-hour-2 {
-    transform: rotate(calc(180deg + 60deg)) translate(0, 47vmin);
+    transform: rotate(calc(180deg + 60deg)) translate(0, calc(47vmin - var(--margin)));
 }
 
 .marker-hour-3 {
-    transform: rotate(calc(180deg + 90deg)) translate(0, 45vmin);
+    transform: rotate(calc(180deg + 90deg)) translate(0, calc(45vmin - var(--margin)));
 }
 
 .marker-hour-4 {
-    transform: rotate(calc(180deg + 120deg)) translate(0, 47vmin);
+    transform: rotate(calc(180deg + 120deg)) translate(0, calc(47vmin - var(--margin)));
 }
 
 .marker-hour-5 {
-    transform: rotate(calc(180deg + 150deg)) translate(0, 47vmin);
+    transform: rotate(calc(180deg + 150deg)) translate(0, calc(47vmin - var(--margin)));
 }
 
 .marker-hour-6 {
-    transform: rotate(calc(180deg + 180deg)) translate(0, 45vmin);
+    transform: rotate(calc(180deg + 180deg)) translate(0, calc(45vmin - var(--margin)));
 }
 
 .marker-hour-7 {
-    transform: rotate(calc(180deg + 210deg)) translate(0, 47vmin);
+    transform: rotate(calc(180deg + 210deg)) translate(0, calc(47vmin - var(--margin)));
 }
 
 .marker-hour-8 {
-    transform: rotate(calc(180deg + 240deg)) translate(0, 47vmin);
+    transform: rotate(calc(180deg + 240deg)) translate(0, calc(47vmin - var(--margin)));
 }
 
 .marker-hour-9 {
-    transform: rotate(calc(180deg + 270deg)) translate(0, 45vmin);
+    transform: rotate(calc(180deg + 270deg)) translate(0, calc(45vmin - var(--margin)));
 }
 
 .marker-hour-10 {
-    transform: rotate(calc(180deg + 300deg)) translate(0, 47vmin);
+    transform: rotate(calc(180deg + 300deg)) translate(0, calc(47vmin - var(--margin)));
 }
 
 .marker-hour-11 {
-    transform: rotate(calc(180deg + 330deg)) translate(0, 47vmin);
+    transform: rotate(calc(180deg + 330deg)) translate(0, calc(47vmin - var(--margin)));
 }
 
 .marker-hour-12 {
-    transform: rotate(calc(180deg + 0deg)) translate(0, 45vmin);
+    transform: rotate(calc(180deg + 0deg)) translate(0, calc(45vmin - var(--margin)));
 }
 
-.marker-min {
+.marker-minute {
     background-color: black;
     position: absolute;
     top:  50vmin;
@@ -112,149 +129,149 @@ body {
     transform-origin: 50% 0vh;
 }
 
-.marker-min-1 {
-    transform: rotate(calc(180deg + calc(1 *6deg))) translate(0, 48vmin);
+.marker-minute-1 {
+    transform: rotate(calc(180deg + calc(1 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-2 {
-    transform: rotate(calc(180deg + calc(2 *6deg))) translate(0, 48vmin);
+.marker-minute-2 {
+    transform: rotate(calc(180deg + calc(2 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-3 {
-    transform: rotate(calc(180deg + calc(3 *6deg))) translate(0, 48vmin);
+.marker-minute-3 {
+    transform: rotate(calc(180deg + calc(3 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-4 {
-    transform: rotate(calc(180deg + calc(4 *6deg))) translate(0, 48vmin);
+.marker-minute-4 {
+    transform: rotate(calc(180deg + calc(4 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-6 {
-    transform: rotate(calc(180deg + calc(6 *6deg))) translate(0, 48vmin);
+.marker-minute-6 {
+    transform: rotate(calc(180deg + calc(6 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-7 {
-    transform: rotate(calc(180deg + calc(7 *6deg))) translate(0, 48vmin);
+.marker-minute-7 {
+    transform: rotate(calc(180deg + calc(7 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-8 {
-    transform: rotate(calc(180deg + calc(8 *6deg))) translate(0, 48vmin);
+.marker-minute-8 {
+    transform: rotate(calc(180deg + calc(8 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-9 {
-    transform: rotate(calc(180deg + calc(9 *6deg))) translate(0, 48vmin);
+.marker-minute-9 {
+    transform: rotate(calc(180deg + calc(9 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-11 {
-    transform: rotate(calc(180deg + calc(11 *6deg))) translate(0, 48vmin);
+.marker-minute-11 {
+    transform: rotate(calc(180deg + calc(11 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-12 {
-    transform: rotate(calc(180deg + calc(12 *6deg))) translate(0, 48vmin);
+.marker-minute-12 {
+    transform: rotate(calc(180deg + calc(12 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-13 {
-    transform: rotate(calc(180deg + calc(13 *6deg))) translate(0, 48vmin);
+.marker-minute-13 {
+    transform: rotate(calc(180deg + calc(13 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-14 {
-    transform: rotate(calc(180deg + calc(14 *6deg))) translate(0, 48vmin);
+.marker-minute-14 {
+    transform: rotate(calc(180deg + calc(14 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-16 {
-    transform: rotate(calc(180deg + calc(16 *6deg))) translate(0, 48vmin);
+.marker-minute-16 {
+    transform: rotate(calc(180deg + calc(16 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-17 {
-    transform: rotate(calc(180deg + calc(17 *6deg))) translate(0, 48vmin);
+.marker-minute-17 {
+    transform: rotate(calc(180deg + calc(17 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-18 {
-    transform: rotate(calc(180deg + calc(18 *6deg))) translate(0, 48vmin);
+.marker-minute-18 {
+    transform: rotate(calc(180deg + calc(18 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-19 {
-    transform: rotate(calc(180deg + calc(19 *6deg))) translate(0, 48vmin);
+.marker-minute-19 {
+    transform: rotate(calc(180deg + calc(19 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-21 {
-    transform: rotate(calc(180deg + calc(21 *6deg))) translate(0, 48vmin);
+.marker-minute-21 {
+    transform: rotate(calc(180deg + calc(21 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-22 {
-    transform: rotate(calc(180deg + calc(22 *6deg))) translate(0, 48vmin);
+.marker-minute-22 {
+    transform: rotate(calc(180deg + calc(22 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-23 {
-    transform: rotate(calc(180deg + calc(23 *6deg))) translate(0, 48vmin);
+.marker-minute-23 {
+    transform: rotate(calc(180deg + calc(23 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-24 {
-    transform: rotate(calc(180deg + calc(24 *6deg))) translate(0, 48vmin);
+.marker-minute-24 {
+    transform: rotate(calc(180deg + calc(24 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-26 {
-    transform: rotate(calc(180deg + calc(26 *6deg))) translate(0, 48vmin);
+.marker-minute-26 {
+    transform: rotate(calc(180deg + calc(26 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-27 {
-    transform: rotate(calc(180deg + calc(27 *6deg))) translate(0, 48vmin);
+.marker-minute-27 {
+    transform: rotate(calc(180deg + calc(27 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-28 {
-    transform: rotate(calc(180deg + calc(28 *6deg))) translate(0, 48vmin);
+.marker-minute-28 {
+    transform: rotate(calc(180deg + calc(28 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-29 {
-    transform: rotate(calc(180deg + calc(29 *6deg))) translate(0, 48vmin);
+.marker-minute-29 {
+    transform: rotate(calc(180deg + calc(29 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-31 {
-    transform: rotate(calc(180deg + calc(31 *6deg))) translate(0, 48vmin);
+.marker-minute-31 {
+    transform: rotate(calc(180deg + calc(31 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-32 {
-    transform: rotate(calc(180deg + calc(32 *6deg))) translate(0, 48vmin);
+.marker-minute-32 {
+    transform: rotate(calc(180deg + calc(32 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-33 {
-    transform: rotate(calc(180deg + calc(33 *6deg))) translate(0, 48vmin);
+.marker-minute-33 {
+    transform: rotate(calc(180deg + calc(33 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-34 {
-    transform: rotate(calc(180deg + calc(34 *6deg))) translate(0, 48vmin);
+.marker-minute-34 {
+    transform: rotate(calc(180deg + calc(34 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-36 {
-    transform: rotate(calc(180deg + calc(36 *6deg))) translate(0, 48vmin);
+.marker-minute-36 {
+    transform: rotate(calc(180deg + calc(36 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-37 {
-    transform: rotate(calc(180deg + calc(37 *6deg))) translate(0, 48vmin);
+.marker-minute-37 {
+    transform: rotate(calc(180deg + calc(37 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-38 {
-    transform: rotate(calc(180deg + calc(38 *6deg))) translate(0, 48vmin);
+.marker-minute-38 {
+    transform: rotate(calc(180deg + calc(38 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-39 {
-    transform: rotate(calc(180deg + calc(39 *6deg))) translate(0, 48vmin);
+.marker-minute-39 {
+    transform: rotate(calc(180deg + calc(39 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-41 {
-    transform: rotate(calc(180deg + calc(41 *6deg))) translate(0, 48vmin);
+.marker-minute-41 {
+    transform: rotate(calc(180deg + calc(41 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-42 {
-    transform: rotate(calc(180deg + calc(42 *6deg))) translate(0, 48vmin);
+.marker-minute-42 {
+    transform: rotate(calc(180deg + calc(42 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-43 {
-    transform: rotate(calc(180deg + calc(43 *6deg))) translate(0, 48vmin);
+.marker-minute-43 {
+    transform: rotate(calc(180deg + calc(43 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-44 {
-    transform: rotate(calc(180deg + calc(44 *6deg))) translate(0, 48vmin);
+.marker-minute-44 {
+    transform: rotate(calc(180deg + calc(44 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-46 {
-    transform: rotate(calc(180deg + calc(46 *6deg))) translate(0, 48vmin);
+.marker-minute-46 {
+    transform: rotate(calc(180deg + calc(46 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-47 {
-    transform: rotate(calc(180deg + calc(47 *6deg))) translate(0, 48vmin);
+.marker-minute-47 {
+    transform: rotate(calc(180deg + calc(47 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-48 {
-    transform: rotate(calc(180deg + calc(48 *6deg))) translate(0, 48vmin);
+.marker-minute-48 {
+    transform: rotate(calc(180deg + calc(48 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-49 {
-    transform: rotate(calc(180deg + calc(49 *6deg))) translate(0, 48vmin);
+.marker-minute-49 {
+    transform: rotate(calc(180deg + calc(49 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-51 {
-    transform: rotate(calc(180deg + calc(51 *6deg))) translate(0, 48vmin);
+.marker-minute-51 {
+    transform: rotate(calc(180deg + calc(51 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-52 {
-    transform: rotate(calc(180deg + calc(52 *6deg))) translate(0, 48vmin);
+.marker-minute-52 {
+    transform: rotate(calc(180deg + calc(52 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-53 {
-    transform: rotate(calc(180deg + calc(53 *6deg))) translate(0, 48vmin);
+.marker-minute-53 {
+    transform: rotate(calc(180deg + calc(53 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-54 {
-    transform: rotate(calc(180deg + calc(54 *6deg))) translate(0, 48vmin);
+.marker-minute-54 {
+    transform: rotate(calc(180deg + calc(54 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-56 {
-    transform: rotate(calc(180deg + calc(56 *6deg))) translate(0, 48vmin);
+.marker-minute-56 {
+    transform: rotate(calc(180deg + calc(56 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-57 {
-    transform: rotate(calc(180deg + calc(57 *6deg))) translate(0, 48vmin);
+.marker-minute-57 {
+    transform: rotate(calc(180deg + calc(57 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-58 {
-    transform: rotate(calc(180deg + calc(58 *6deg))) translate(0, 48vmin);
+.marker-minute-58 {
+    transform: rotate(calc(180deg + calc(58 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
-.marker-min-59 {
-    transform: rotate(calc(180deg + calc(59 *6deg))) translate(0, 48vmin);
+.marker-minute-59 {
+    transform: rotate(calc(180deg + calc(59 *6deg))) translate(0, calc(48vmin - var(--margin)));
 }
 
 .number {
@@ -263,16 +280,14 @@ body {
     top: calc(50vmin - 1rem);
     left: calc(50vmin - .5rem);
     transform-origin: 50% 50%;
-    --number-translate-y: 43vmin;
 }
 
-.number-big {
+.number-quarter {
     font-size: 200%;
     position: absolute;
     top: calc(50vmin - 1.5rem);
     left: calc(50vmin - .5rem);
     transform-origin: 50% 50%;
-    --number-big-translate-y: 40vmin;
 }
 
 .number-1 {
@@ -284,7 +299,7 @@ body {
 }
 
 .number-3 {
-    transform: rotate(calc(180deg + 90deg)) translate(0, var(--number-big-translate-y)) rotate(calc(180deg - 90deg));
+    transform: rotate(calc(180deg + 90deg)) translate(0, var(--number-quarter-translate-y)) rotate(calc(180deg - 90deg));
 }
 
 .number-4 {
@@ -296,7 +311,7 @@ body {
 }
 
 .number-6 {
-    transform: rotate(calc(180deg + 180deg)) translate(0%, var(--number-big-translate-y)) rotate(calc(180deg - 180deg));
+    transform: rotate(calc(180deg + 180deg)) translate(0%, var(--number-quarter-translate-y)) rotate(calc(180deg - 180deg));
 }
 
 .number-7 {
@@ -308,7 +323,7 @@ body {
 }
 
 .number-9 {
-    transform: rotate(calc(180deg + 270deg)) translate(0, var(--number-big-translate-y)) rotate(calc(180deg - 270deg));
+    transform: rotate(calc(180deg + 270deg)) translate(0, var(--number-quarter-translate-y)) rotate(calc(180deg - 270deg));
 }
 
 .number-10 {
@@ -320,7 +335,7 @@ body {
 }
 
 .number-12 {
-    transform: rotate(calc(180deg + 360deg)) translate(0, var(--number-big-translate-y)) rotate(calc(180deg - 360deg));
+    transform: rotate(calc(180deg + 360deg)) translate(.12em, var(--number-quarter-translate-y)) rotate(calc(180deg - 360deg));
 }
 
 
@@ -343,7 +358,7 @@ body {
     top: 50vmin;
     left: calc(50vmin - 2.5px);
     width: 5px;
-    height: 45vmin;
+    height: calc(45vmin - var(--margin));
     margin-top: -3vh;
     transform-origin: 50% 3vh;
     transform: rotate(calc(180deg + var(--second-deg)));
@@ -361,7 +376,7 @@ body {
     top: 50vmin;
     left: calc(50vmin - 5px);
     width: 10px;
-    height: 40vmin;
+    height: calc(40vmin - var(--margin));
     margin-top: -2vh;
     transform-origin: 50% 2vh;
     transform: rotate(calc(180deg + var(--minute-deg)));
@@ -378,7 +393,7 @@ body {
     top:  50vmin;
     left: calc(50vmin - 6px);
     width: 12px;
-    height: 25vmin;
+    height: calc(33vmin - var(--margin));;
     margin-top: -1.5vh;
     transform-origin: calc(50%) 1.5vh;
     transform: rotate(calc(180deg + var(--hour-deg)));
@@ -387,39 +402,63 @@ body {
     animation-name: moveHour;    
 }
 
-
-
-
-
 @keyframes moveSecond {
     from {
         transform: rotate(calc(180deg + var(--second-deg-before)));
     }
-  
+
     to {
         transform: rotate(calc(180deg + var(--second-deg)));
     }
-  }
+}
 
 @keyframes moveMinute {
-    from {
+    0% {
         transform: rotate(calc(180deg + var(--minute-deg-before)));
     }
-  
-    to {
+
+    5% {
+        transform: rotate(calc(180deg + var(--minute-deg) + 1deg));
+    }
+
+    7% {
+        transform: rotate(calc(180deg + var(--minute-deg) - 1deg));
+    }
+
+    10% {
+        transform: rotate(calc(180deg + var(--minute-deg) + 1deg));
+    }
+
+    13% {
         transform: rotate(calc(180deg + var(--minute-deg)));
     }
-  }
+
+    16% {
+        transform: rotate(calc(180deg + var(--minute-deg) + 1deg));
+    }
+
+    19% {
+        transform: rotate(calc(180deg + var(--minute-deg) - 1deg));
+    }
+
+    22% {
+        transform: rotate(calc(180deg + var(--minute-deg) + 1deg));
+    }
+
+    25% {
+        transform: rotate(calc(180deg + var(--minute-deg)));
+    }
+}
 
 @keyframes moveHour {
     from {
         transform: rotate(calc(180deg + var(--hour-deg-before)));
     }
-  
+
     to {
         transform: rotate(calc(180deg + var(--hour-deg)));
     }
-  }
+}
 
 
 
