@@ -8,6 +8,7 @@
 
 body {
     font-family: 'Anton', sans-serif;
+    background-color: #ece5e5;
 
     /* set size in relation to viewport */
     --margin: 2vmin;
@@ -43,6 +44,10 @@ body {
 
 .dial {
     background-color: #d4d4d4;
+    box-shadow: 10px -10px 10px #afafaf;
+    border: 1px solid;
+    border-spacing: 10px;
+    border-color: black;
     border-radius: 50%;
     position: absolute;
     top:  var(--margin);
