@@ -94,7 +94,7 @@
     <script>
       let oldDate = new Date('1970-01-01T00:00:00')
 
-      function reset_animation(element) {
+      function resetAnimation(element) {
         var el = document.getElementById(element)
         el.style.animation = 'none'
         el.offsetHeight /* trigger reflow */
@@ -131,16 +131,26 @@
           seconds = oldSeconds + 1
         }
 
-        element.style.setProperty('--hour', hours)
-        element.style.setProperty('--minute', minutes)
         element.style.setProperty('--second', seconds)
-        element.style.setProperty('--hour-before', oldHours)
-        element.style.setProperty('--minute-before', oldMinutes)
         element.style.setProperty('--second-before', oldSeconds)
 
-        reset_animation('hour')
-        reset_animation('second')
-        if (minutes != oldMinutes) reset_animation('minute')
+        // simulate minute sync
+        if (seconds == 60) {
+          element.style.setProperty('--second-animation', 'moveSecondJitter')
+        } else {
+          element.style.setProperty('--second-animation', 'moveSecond')
+        }
+        resetAnimation('second')
+
+        // animate minute and hour only on minute change
+        if (oldSeconds == 0) {
+          element.style.setProperty('--hour', hours)
+          element.style.setProperty('--minute', minutes)
+          element.style.setProperty('--hour-before', oldHours)
+          element.style.setProperty('--minute-before', oldMinutes)
+          resetAnimation('minute')
+          resetAnimation('hour')
+        }
 
         oldDate = new Date()
       }

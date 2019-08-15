@@ -30,6 +30,8 @@ body {
     --number-translate-y: calc(44vmin - var(--margin));
     --number-quarter-translate-y: calc(41vmin - var(--margin));
 
+    --second-animation: moveSecond;
+
     --dot-size: 10px;
 }
 
@@ -368,7 +370,7 @@ body {
     transform: rotate(calc(180deg + var(--second-deg)));
     z-index: 3;
     animation-duration: .8s;
-    animation-name: moveSecond;
+    animation-name: var(--second-animation);
     animation-fill-mode: forwards;
 }
 
@@ -412,6 +414,20 @@ body {
     }
 
     to {
+        transform: rotate(calc(180deg + var(--second-deg)));
+    }
+}
+
+@keyframes moveSecondJitter {
+    0% {
+        transform: rotate(calc(180deg + var(--second-deg-before)));
+    }
+
+    80% {
+        transform: rotate(calc(180deg + var(--second-deg-before)));
+    }
+
+    100% {
         transform: rotate(calc(180deg + var(--second-deg)));
     }
 }
